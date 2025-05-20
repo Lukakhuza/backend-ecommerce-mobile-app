@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 exports.createUser = (req, res, next) => {
-  console.log("Here is the request body", req.params);
+  console.log("Here is the request body", req.body.email);
   const firstName = "Luka";
   const lastName = "Khuz";
   const email = "LukaTest@gmail.com";
