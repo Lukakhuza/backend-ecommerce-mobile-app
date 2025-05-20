@@ -6,7 +6,7 @@ exports.createUser = (req, res, next) => {
   const lastName = req.body.lastName;
   const email = req.body.email;
   const phoneNumber = req.body.phoneNumber;
-  const address = "10 Main St., Washington, NJ 08950";
+  const address = req.body.address;
   const shopFor = req.body.shopFor;
   const user = new User({
     firstName: firstName,
