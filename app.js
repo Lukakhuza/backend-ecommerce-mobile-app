@@ -6,8 +6,6 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-console.log(process.env.MONGO_USER);
-
 const productRoutes = require("./routes/product");
 const userRoutes = require("./routes/user");
 
