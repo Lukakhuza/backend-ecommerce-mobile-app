@@ -2,12 +2,12 @@ const User = require("../models/user");
 
 exports.createUser = (req, res, next) => {
   console.log(req.body);
-  const firstName = "Luka";
-  const lastName = "Khuz";
-  const email = "LukaTest@gmail.com";
-  const phoneNumber = "9085550000";
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
+  const phoneNumber = req.body.phoneNumber;
   const address = "10 Main St., Washington, NJ 08950";
-  const shopFor = "Men";
+  const shopFor = req.body.shopFor;
   const user = new User({
     firstName: firstName,
     lastName: lastName,
