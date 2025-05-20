@@ -1,29 +1,58 @@
 const User = require("../models/user");
+const bcrypt = require("bcryptjs");
 
 exports.createUser = (req, res, next) => {
-  console.log(req.body);
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
+  const password = req.body.password;
   const phoneNumber = req.body.phoneNumber;
   const address = req.body.address;
   const shopFor = req.body.shopFor;
-  const user = new User({
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    phoneNumber: phoneNumber,
-    address: address,
-    shopFor: shopFor,
-  });
-  user
-    .save()
+
+  bcrypt
+    .hash(password, 12)
+    .then((hashedPassword) => {
+      const user = new User({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: hashedPassword,
+        phoneNumber: phoneNumber,
+        address: address,
+        shopFor: shopFor,
+      });
+
+      return user.save();
+    })
     .then((result) => {
       console.log("Created User");
     })
     .catch((err) => {
       console.log(err);
     });
+};
+
+exports.loginUser = (req, res, next) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  User.findOne({ email: email }).then((user) => {
+    if (!user) {
+      // If no user, redirect the user to the login page.
+    }
+    bcrypt
+      .compare(password, user.password)
+      .then((doMatch) => {
+        if (doMatch) {
+          // log user in
+          console.log("Logged in successfully");
+        }
+        // else, redirect the user back to the login page.
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 };
 
 exports.getUsers = (req, res, next) => {
