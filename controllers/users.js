@@ -1,9 +1,9 @@
 const User = require("../models/user");
 
 exports.createUser = (req, res, next) => {
-  const firstName = "Ma";
-  const lastName = "M";
-  const email = "test@gmail.com";
+  const firstName = "Luka";
+  const lastName = "Khuz";
+  const email = "LukaTest@gmail.com";
   const phoneNumber = "9085550000";
   const address = "10 Main St., Washington, NJ 08950";
   const shopFor = "Men";

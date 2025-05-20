@@ -10,14 +10,8 @@ const productRoutes = require("./routes/product");
 const userRoutes = require("./routes/user");
 
 app.use("/", (req, res, next) => {
-  console.log("In the middleware!");
-  const result = {
-    firstName: "Luka",
-    lastName: "Khuza",
-  };
   res.setHeader("Content-Type", "application/json");
   res.send(JSON.stringify(result));
-  // res.send(result);
   next();
 });
 
