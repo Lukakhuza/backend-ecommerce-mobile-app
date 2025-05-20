@@ -1,10 +1,13 @@
 const http = require("http");
 require("dotenv").config({ path: "credentials.env" });
+const bodyParser = require("body-parser");
 
 const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
+
+app.use(bodyParser.json({ strict: false }));
 
 const productRoutes = require("./routes/product");
 const userRoutes = require("./routes/user");
