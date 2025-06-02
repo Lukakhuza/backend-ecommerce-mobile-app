@@ -86,7 +86,7 @@ exports.getUser = (req, res, next) => {
 exports.getUserByEmail = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
-      console.log("The user is here", user);
+      console.log("The user is here", user.firstName);
       res.setHeader("Content-Type", "application/json");
       res.send(user);
       // console.log("Test Response 6", res);
