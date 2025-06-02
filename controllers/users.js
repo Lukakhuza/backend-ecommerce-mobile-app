@@ -84,11 +84,10 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.getUserByEmail = (req, res, next) => {
-  console.log("Test 1");
-  console.log(req.body.email);
-  User.findOne({ email: "Lukakhuz778@test.com" })
+  User.findOne({ email: req.body.email })
     .then((user) => {
       console.log(user);
+      res.send(JSON.stringify(user));
     })
     .catch((err) => {
       console.log(err);
