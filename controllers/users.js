@@ -86,10 +86,10 @@ exports.getUser = (req, res, next) => {
 exports.getUserByEmail = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
-      console.log(user);
+      console.log("The user is here", user);
       res.setHeader("Content-Type", "application/json");
       res.send(user);
-      console.log("Test Response 6", res);
+      // console.log("Test Response 6", res);
     })
     .catch((err) => {
       console.log(err);
