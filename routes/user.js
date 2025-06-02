@@ -14,7 +14,10 @@ router.post("/login", usersController.loginUser);
 router.get("/get-users", usersController.getUsers);
 
 // Get a single user
-router.get("/get-user/", usersController.getUser);
+router.get("/get-user/:userId", usersController.getUser);
+
+// Get user by email
+router.get("/get-user-by-email", usersController.getUserByEmail);
 
 // Update an user
 router.get("/update-user/:userId", usersController.updateUser);

@@ -66,8 +66,25 @@ exports.getUsers = (req, res, next) => {
 };
 
 exports.getUser = (req, res, next) => {
-  const userId = "6825a5af70841ecb0896f31d";
-  User.findById(userId)
+  console.log("Test 12354");
+  // const userId = "6825a5af70841ecb0896f31d";
+  // const user =
+  // User.findOne({ email:  })
+  //   .then((user) => {
+  //     console.log("This is the user: ", user);
+  //   })
+  //   // const userId = req.params.userId;
+  //   // User.findById(userId)
+  //   //   .then((user) => {
+  //   //     console.log(user);
+  //   //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+};
+
+exports.getUserByEmail = (req, res, next) => {
+  User.findOne({ email: "Lukakhuz778@test.com" })
     .then((user) => {
       console.log(user);
     })

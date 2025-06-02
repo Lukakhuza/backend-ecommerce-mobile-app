@@ -20,6 +20,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  token: String,
+  tokenExpiration: Date,
   phoneNumber: {
     type: String,
     required: false,
