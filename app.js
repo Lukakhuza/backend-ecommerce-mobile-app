@@ -1,6 +1,7 @@
 const http = require("http");
 require("dotenv").config({ path: "credentials.env" });
 const bodyParser = require("body-parser");
+const fs = require("fs");
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -39,6 +40,26 @@ app.use("/", (req, res, next) => {
   req.session.isLoggedIn = true;
   // res.send(JSON.stringify(result));
   next();
+});
+
+app.use("/places", async (req, res, next) => {
+  console.log("Hello");
+  // const fileContent = await fs.readFile("dataplaces.json");
+
+  console.log("Test 2");
+  const result = JSON.stringify({
+    id: "p1",
+    title: "Forest Waterfall",
+    image: {
+      src: "forest-waterfall.jpg",
+      alt: "A tranquil forest with a cascading waterfall amidst greenery.",
+    },
+    lat: 44.5588,
+    lon: -80.344,
+  });
+  console.log(result);
+  const placesData = JSON.parse(result);
+  res.status(200).json({ places: placesData });
 });
 
 app.use("/product", productRoutes);

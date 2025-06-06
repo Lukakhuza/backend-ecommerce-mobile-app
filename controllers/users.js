@@ -88,7 +88,7 @@ exports.getUserByEmail = (req, res, next) => {
     .then((user) => {
       console.log("The user is here", user.firstName);
       res.setHeader("Content-Type", "application/json");
-      res.send(user);
+      res.send(user.firstName);
       // console.log("Test Response 6", res);
     })
     .catch((err) => {
