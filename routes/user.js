@@ -17,7 +17,7 @@ router.get("/get-users", usersController.getUsers);
 router.get("/get-user/:userId", usersController.getUser);
 
 // Get user by email
-router.post("/get-user-by-email", usersController.getUserByEmail);
+router.get("/get-user-by-email", usersController.getUserByEmail);
 
 // Update an user
 router.get("/update-user/:userId", usersController.updateUser);
