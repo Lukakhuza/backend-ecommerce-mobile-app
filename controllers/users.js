@@ -84,6 +84,7 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.getUserByEmail = (req, res, next) => {
+  console.log(req.body);
   const result = JSON.stringify({
     firstName: "Luka",
     lastName: "Khuza",
