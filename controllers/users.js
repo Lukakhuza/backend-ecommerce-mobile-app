@@ -86,19 +86,19 @@ exports.getUser = (req, res, next) => {
 exports.getUserByEmail = (req, res, next) => {
   User.findOne({ email: req.body.email }).then((user) => {
     console.log(user);
-  });
-  const result = JSON.stringify({
-    firstName: "Luka",
-    lastName: "Khuza",
-    email: "lukakhuza7@test.com",
-    password: "somehashedpassword",
-    phoneNumber: "908123456",
-    address: "my address",
-    shopFor: "men",
-  });
+    const result = JSON.stringify({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      password: user.password,
+      phoneNumber: user.phoneNumber,
+      address: user.address,
+      shopFor: user.shopFor,
+    });
 
-  const userData = JSON.parse(result);
-  res.status(200).json({ user: userData });
+    const userData = JSON.parse(result);
+    res.status(200).json({ user: userData });
+  });
 
   // User.findOne({ email: req.body.email })
   //   .then((user) => {
