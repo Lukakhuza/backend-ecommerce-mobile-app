@@ -84,16 +84,42 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.getUserByEmail = (req, res, next) => {
-  User.findOne({ email: req.body.email })
-    .then((user) => {
-      console.log("The user is here", user.firstName);
-      res.setHeader("Content-Type", "application/json");
-      res.send(user.firstName);
-      // console.log("Test Response 6", res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const result = JSON.stringify({
+    id: "p1",
+    title: "Forest Waterfall",
+    image: {
+      src: "forest-waterfall.jpg",
+      alt: "A tranquil forest with a cascading waterfall amidst greenery.",
+    },
+    lat: 44.5588,
+    lon: -80.344,
+  });
+
+  const result1 = JSON.stringify({
+    firstName: "Luka",
+    lastName: "Khuza",
+    email: "lukakhuza7@test.com",
+    password: "somehashedpassword",
+    phoneNumber: "908123456",
+    address: "my address",
+    shopFor: "men",
+  });
+
+  console.log(result);
+  const placesData = JSON.parse(result);
+  const userData = JSON.parse(result1);
+  res.status(200).json({ places: userData });
+
+  // User.findOne({ email: req.body.email })
+  //   .then((user) => {
+  //     console.log("The user is here", user.firstName);
+  //     res.setHeader("Content-Type", "application/json");
+  //     res.send(user.firstName);
+  //     // console.log("Test Response 6", res);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 };
 
 exports.updateUser = (req, res, next) => {
