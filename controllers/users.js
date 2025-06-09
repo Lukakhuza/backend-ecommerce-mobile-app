@@ -85,17 +85,6 @@ exports.getUser = (req, res, next) => {
 
 exports.getUserByEmail = (req, res, next) => {
   const result = JSON.stringify({
-    id: "p1",
-    title: "Forest Waterfall",
-    image: {
-      src: "forest-waterfall.jpg",
-      alt: "A tranquil forest with a cascading waterfall amidst greenery.",
-    },
-    lat: 44.5588,
-    lon: -80.344,
-  });
-
-  const result1 = JSON.stringify({
     firstName: "Luka",
     lastName: "Khuza",
     email: "lukakhuza7@test.com",
@@ -105,10 +94,8 @@ exports.getUserByEmail = (req, res, next) => {
     shopFor: "men",
   });
 
-  console.log(result);
-  const placesData = JSON.parse(result);
-  const userData = JSON.parse(result1);
-  res.status(200).json({ places: userData });
+  const userData = JSON.parse(result);
+  res.status(200).json({ user: userData });
 
   // User.findOne({ email: req.body.email })
   //   .then((user) => {
