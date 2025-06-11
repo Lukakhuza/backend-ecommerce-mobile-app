@@ -101,9 +101,10 @@ exports.getUserByEmail = (req, res, next) => {
   });
 
   exports.updateUser = (req, res, next) => {
-    User.findOne({ email: req.body.email }).then((user) => {
-      console.log("Test 28", user);
-    });
+    console.log("Test 29", req.body);
+    // User.findOne({ email: req.body.email }).then((user) => {
+    //   console.log("Test 28", user);
+    // });
     // const userId = "6825a5af70841ecb0896f31d";
     const userId = req.params.userId;
     const updatedFirstName = "ShmagiUpdated";
