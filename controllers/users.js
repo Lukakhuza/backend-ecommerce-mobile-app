@@ -118,7 +118,7 @@ exports.updateUser = (req, res, next) => {
   const userId = req.params.userId;
   const updatedFirstName = "ShmagiUpdated";
   const updatedLastName = "KhuzaurashviliUpdated";
-  const updatedEmail = "Lukaemail@test.com";
+  const updatedEmail = "Luka@test.com";
   const updatedPhoneNumber = "9083923997";
   const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
   const updatedShopFor = "Men";
