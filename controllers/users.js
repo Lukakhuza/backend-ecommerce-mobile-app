@@ -84,6 +84,7 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.getUserByEmail = (req, res, next) => {
+  console.log(req.body.email);
   User.findOne({ email: req.body.email }).then((user) => {
     console.log(user);
     console.log(req.body.email);
