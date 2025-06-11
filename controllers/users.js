@@ -124,7 +124,7 @@ exports.updateUser = (req, res, next) => {
   const updatedShopFor = "Men";
 
   console.log("User id is", req.params.userId);
-  User.findById(userId)
+  User.findOne({ email: req.body.email })
     .then((user) => {
       user.firstName = updatedFirstName;
       user.lastName = updatedLastName;
