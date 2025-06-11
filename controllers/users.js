@@ -116,10 +116,10 @@ exports.updateUser = (req, res, next) => {
   console.log("Test 31", req.body);
   // const userId = "6825a5af70841ecb0896f31d";
   const userId = req.params.userId;
-  const updatedFirstName = "ShmagiUpdated";
-  const updatedLastName = "KhuzaurashviliUpdated";
-  const updatedEmail = "Luka@test.com";
-  const updatedPhoneNumber = "9083923997";
+  const updatedFirstName = req.body.firstName;
+  const updatedLastName = req.body.lastName;
+  const updatedEmail = req.body.email;
+  const updatedPhoneNumber = req.body.phoneNumber;
   const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
   const updatedShopFor = "Men";
 
