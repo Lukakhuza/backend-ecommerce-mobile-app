@@ -113,7 +113,6 @@ exports.getUserByEmail = (req, res, next) => {
 };
 
 exports.updateUser = (req, res, next) => {
-  console.log("Test 30", req.body.email);
   // const userId = "6825a5af70841ecb0896f31d";
   const userId = req.params.userId;
   const updatedFirstName = "ShmagiUpdated";
