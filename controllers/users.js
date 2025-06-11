@@ -123,6 +123,7 @@ exports.updateUser = (req, res, next) => {
   const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
   const updatedShopFor = "Men";
 
+  console.log("User id is", req.params.userId);
   User.findById(userId)
     .then((user) => {
       user.firstName = updatedFirstName;
