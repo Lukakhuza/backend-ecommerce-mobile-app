@@ -100,6 +100,49 @@ exports.getUserByEmail = (req, res, next) => {
     res.status(200).json({ user: userData });
   });
 
+  exports.updateUser = (req, res, next) => {
+    User.findOne({ email: req.body.email }).then((user) => {
+      console.log("Test 28", user);
+    });
+    // const userId = "6825a5af70841ecb0896f31d";
+    const userId = req.params.userId;
+    const updatedFirstName = "ShmagiUpdated";
+    const updatedLastName = "KhuzaurashviliUpdated";
+    const updatedEmail = "Luka@test.com";
+    const updatedPhoneNumber = "9083923997";
+    const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
+    const updatedShopFor = "Men";
+
+    console.log("User id is", req.params.userId);
+    User.findById(userId)
+      .then((user) => {
+        user.firstName = updatedFirstName;
+        user.lastName = updatedLastName;
+        user.email = updatedEmail;
+        user.phoneNumber = updatedPhoneNumber;
+        user.address = updatedAddress;
+        user.shopFor = updatedShopFor;
+        return user.save();
+      })
+      .then((result) => {
+        console.log("Updated User!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  exports.deleteUser = (req, res, next) => {
+    const userId = req.params.userId;
+    User.findByIdAndDelete(userId)
+      .then((result) => {
+        console.log("Deleted User!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // User.findOne({ email: req.body.email })
   //   .then((user) => {
   //     console.log("The user is here", user.firstName);
@@ -110,45 +153,4 @@ exports.getUserByEmail = (req, res, next) => {
   //   .catch((err) => {
   //     console.log(err);
   //   });
-};
-
-exports.updateUser = (req, res, next) => {
-  console.log("Test 25");
-  // const userId = "6825a5af70841ecb0896f31d";
-  const userId = req.params.userId;
-  const updatedFirstName = "ShmagiUpdated";
-  const updatedLastName = "KhuzaurashviliUpdated";
-  const updatedEmail = "Luka@test.com";
-  const updatedPhoneNumber = "9083923997";
-  const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
-  const updatedShopFor = "Men";
-
-  console.log("User id is", req.params.userId);
-  User.findById(userId)
-    .then((user) => {
-      user.firstName = updatedFirstName;
-      user.lastName = updatedLastName;
-      user.email = updatedEmail;
-      user.phoneNumber = updatedPhoneNumber;
-      user.address = updatedAddress;
-      user.shopFor = updatedShopFor;
-      return user.save();
-    })
-    .then((result) => {
-      console.log("Updated User!");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-exports.deleteUser = (req, res, next) => {
-  const userId = req.params.userId;
-  User.findByIdAndDelete(userId)
-    .then((result) => {
-      console.log("Deleted User!");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 };
