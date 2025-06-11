@@ -113,17 +113,13 @@ exports.getUserByEmail = (req, res, next) => {
 };
 
 exports.updateUser = (req, res, next) => {
-  console.log("Test 31", req.body);
-  // const userId = "6825a5af70841ecb0896f31d";
   const userId = req.params.userId;
   const updatedFirstName = req.body.firstName;
   const updatedLastName = req.body.lastName;
   const updatedEmail = req.body.email;
   const updatedPhoneNumber = req.body.phoneNumber;
-  const updatedAddress = "153 Nathan Dr., North Brunswick, NJ 08902";
+  const updatedAddress = req.body.address;
   const updatedShopFor = "Men";
-
-  console.log("User id is", req.params.userId);
   User.findOne({ email: req.body.email })
     .then((user) => {
       user.firstName = updatedFirstName;
