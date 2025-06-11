@@ -20,7 +20,7 @@ router.get("/get-user/:userId", usersController.getUser);
 router.post("/get-user-by-email", usersController.getUserByEmail);
 
 // Update an user
-router.get("/update-user/:userId", usersController.updateUser);
+router.put("/update-user/:userId", usersController.updateUser);
 
 // Delete an user
 router.get("/delete-user/:userId", usersController.deleteUser);
