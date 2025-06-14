@@ -66,7 +66,6 @@ exports.getUsers = (req, res, next) => {
 };
 
 exports.getUser = (req, res, next) => {
-  console.log("Test 12354");
   // const userId = "6825a5af70841ecb0896f31d";
   // const user =
   // User.findOne({ email:  })

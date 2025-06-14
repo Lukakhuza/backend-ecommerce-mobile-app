@@ -46,7 +46,6 @@ exports.getProduct = (req, res, next) => {
 
 exports.updateProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  console.log(prodId);
   const updatedTitle = "Title 1 Updated";
   const updatedPrice = 26.0;
   const updatedDescription = "This is some description Updated";

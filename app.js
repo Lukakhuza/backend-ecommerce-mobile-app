@@ -43,10 +43,8 @@ app.use("/", (req, res, next) => {
 });
 
 app.use("/places", async (req, res, next) => {
-  console.log("Hello");
   // const fileContent = await fs.readFile("dataplaces.json");
 
-  console.log("Test 2");
   const result = JSON.stringify({
     id: "p1",
     title: "Forest Waterfall",
