@@ -19,4 +19,7 @@ router.get("/update-product/:productId", productsController.updateProduct);
 // Delete a product
 router.get("/delete-product/:productId", productsController.deleteProduct);
 
+// Add product to cart
+router.post("/add-to-cart", productsController.addProductToCart);
+
 module.exports = router;

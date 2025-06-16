@@ -81,3 +81,10 @@ exports.deleteProduct = (req, res, next) => {
       console.log(err);
     });
 };
+
+exports.addProductToCart = (req, res, next) => {
+  console.log(req.body);
+  // const prodId = req.body.productId;
+  // Find product by id
+  // after finding the product, return req.user.addProductToCart(product)
+};
