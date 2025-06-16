@@ -119,7 +119,6 @@ exports.updateUser = (req, res, next) => {
   const updatedPhoneNumber = req.body.phoneNumber;
   const updatedAddress = req.body.address;
   const updatedShopFor = "Men";
-  console.log("Test 33", req.body);
   User.findOne({ email: req.body.email })
     .then((user) => {
       user.firstName = updatedFirstName;
