@@ -48,7 +48,8 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.methods.addToCart = function (product) {
+userSchema.methods.addProductToCart = function (product) {
+  console.log("Test 35");
   const cartProductIndex = this.cart.items.findIndex((cp) => {
     return cp.productId.toString() === product._id.toString();
   });
