@@ -20,6 +20,6 @@ router.get("/update-product/:productId", productsController.updateProduct);
 router.get("/delete-product/:productId", productsController.deleteProduct);
 
 // Add product to cart
-router.post("/add-to-cart", productsController.addProductToCart);
+router.post("/add-to-cart", productsController.postCart);
 
 module.exports = router;
