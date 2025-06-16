@@ -85,7 +85,7 @@ exports.deleteProduct = (req, res, next) => {
 exports.postCart = (req, res, next) => {
   const product = req.body;
   console.log(product);
-  // req.user.addProductToCart(product);
+  req.user.addProductToCart(product);
   // const prodId = req.body.productId;
   // Find product by id
   // after finding the product, return req.user.addProductToCart(product)
