@@ -97,23 +97,23 @@ exports.postCart = (req, res, next) => {
   const updatedCart = product;
   const updatedShopFor = "Men";
   console.log("Test 55", updatedCart);
-  User.findOne({ email: req.body.email })
-    .then((user) => {
-      console.log("Test 56", user);
-      user.firstName = updatedFirstName;
-      user.lastName = updatedLastName;
-      user.email = updatedEmail;
-      user.phoneNumber = updatedPhoneNumber;
-      user.address = updatedAddress;
-      user.shopFor = updatedShopFor;
-      return user.save();
-    })
-    .then((result) => {
-      console.log("Updated User!");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // User.findOne({ email: req.body.email })
+  //   .then((user) => {
+  //     console.log("Test 56", user);
+  //     user.firstName = updatedFirstName;
+  //     user.lastName = updatedLastName;
+  //     user.email = updatedEmail;
+  //     user.phoneNumber = updatedPhoneNumber;
+  //     user.address = updatedAddress;
+  //     user.shopFor = updatedShopFor;
+  //     return user.save();
+  //   })
+  //   .then((result) => {
+  //     console.log("Updated User!");
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 
   // req.user.addProductToCart(product);
   // const prodId = req.body.productId;
