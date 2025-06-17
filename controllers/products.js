@@ -97,7 +97,7 @@ exports.postCart = (req, res, next) => {
   const updatedCart = product;
   const updatedShopFor = "Men";
   console.log("Test 55", updatedCart);
-  User.findOne({ email: req.body.email }).then((user) => {
+  User.findOne({ email: user.email }).then((user) => {
     console.log("Test 56", user);
     //     user.firstName = updatedFirstName;
     //     user.lastName = updatedLastName;
