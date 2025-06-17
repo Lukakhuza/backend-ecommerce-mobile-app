@@ -84,7 +84,7 @@ exports.deleteProduct = (req, res, next) => {
 };
 
 exports.postCart = (req, res, next) => {
-  const product = req.body;
+  const product = req.body.productData;
   console.log("Test 42", product);
   // req.user.addProductToCart(product);
   // const prodId = req.body.productId;
