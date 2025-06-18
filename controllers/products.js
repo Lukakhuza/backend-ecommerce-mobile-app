@@ -114,6 +114,7 @@ exports.postCart = (req, res, next) => {
       for (i = 0; i < user.cart.items.length; i++) {
         if (product.id === user.cart.items[i].product.id) {
           productIndexInCart = i;
+          console.log(productIndexInCart);
         }
       }
       // If not, add the product to the cart
