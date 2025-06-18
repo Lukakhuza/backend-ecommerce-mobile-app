@@ -110,9 +110,11 @@ exports.postCart = (req, res, next) => {
       user.address = updatedAddress;
       user.shopFor = updatedShopFor;
       // Check if the product is already in the cart. If so, update quantity.
-      const productCartIndex = -1;
+      const productIndexInCart = -1;
       for (i = 0; i < user.cart.items.length; i++) {
-        console.log("Test 65", product.id === user.cart.items[i].product.id);
+        if (product.id === user.cart.items[i].product.id) {
+          productIndexInCart = i;
+        }
       }
       // If not, add the product to the cart
       user.cart.items.push(updatedCartItem);
