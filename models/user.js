@@ -37,7 +37,7 @@ const userSchema = new Schema({
   cart: {
     items: [
       {
-        product: { type: String, required: false },
+        product: { type: Object, required: false },
         quantity: { type: Number, required: true },
       },
     ],
