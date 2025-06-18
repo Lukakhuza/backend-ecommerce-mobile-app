@@ -84,23 +84,23 @@ exports.deleteProduct = (req, res, next) => {
 };
 
 exports.postCart = (req, res, next) => {
-  const product = req.body.productData;
+  // const product = req.body.productData;
+  const product = {
+    id: req.body.productData.id,
+    title: req.body.productData.title,
+    price: req.body.productData.price,
+  };
   const user = req.body.userData;
-  console.log("Test 42", product);
-  console.log("Test 53", user);
-
   const updatedFirstName = user.firstName;
   const updatedLastName = user.lastName;
   const updatedEmail = user.email;
   const updatedPhoneNumber = user.phoneNumber;
   const updatedAddress = user.address;
-  console.log("Test 60", typeof product);
   const updatedCartItem = {
     product: product,
-    quantity: 17,
+    quantity: req.body.productData.quantity,,
   };
   const updatedShopFor = "Men";
-  console.log("Test 55", updatedCartItem);
   User.findOne({ email: user.email })
     .then((user) => {
       user.firstName = updatedFirstName;
