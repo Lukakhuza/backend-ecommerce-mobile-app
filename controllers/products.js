@@ -99,7 +99,7 @@ exports.postCart = (req, res, next) => {
     quantity: 17,
   };
   const updatedShopFor = "Men";
-  console.log("Test 55", updatedCart);
+  console.log("Test 55", updatedCartItem);
   User.findOne({ email: user.email })
     .then((user) => {
       user.firstName = updatedFirstName;
