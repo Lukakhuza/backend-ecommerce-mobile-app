@@ -98,7 +98,7 @@ exports.postCart = (req, res, next) => {
   const updatedAddress = user.address;
   const updatedCartItem = {
     product: product,
-    quantity: req.body.productData.quantity,,
+    quantity: req.body.productData.quantity,
   };
   const updatedShopFor = "Men";
   User.findOne({ email: user.email })
