@@ -109,6 +109,9 @@ exports.postCart = (req, res, next) => {
       user.phoneNumber = updatedPhoneNumber;
       user.address = updatedAddress;
       user.shopFor = updatedShopFor;
+      // Check if the product is already in the cart. If so, update quantity.
+      console.log(user.cart.items);
+      // If not, add the product to the cart
       user.cart.items.push(updatedCartItem);
       return user.save();
     })
