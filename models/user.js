@@ -37,18 +37,18 @@ const userSchema = new Schema({
   cart: {
     items: [
       {
-        product: {},
+        product: { type: String, required: true },
         quantity: { type: Number, required: true },
       },
     ],
   },
 });
 
-userSchema.methods.addProductToCart = function (product) {
-  console.log("Test 35");
-  const cartProductIndex = this.cart.items.findIndex((cp) => {
-    return cp.productId.toString() === product._id.toString();
-  });
-};
+// userSchema.methods.addProductToCart = function (product) {
+//   console.log("Test 35");
+//   const cartProductIndex = this.cart.items.findIndex((cp) => {
+//     return cp.productId.toString() === product._id.toString();
+//   });
+// };
 
 module.exports = mongoose.model("User", userSchema);

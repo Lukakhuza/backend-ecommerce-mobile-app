@@ -105,7 +105,7 @@ exports.postCart = (req, res, next) => {
       user.phoneNumber = updatedPhoneNumber;
       user.address = updatedAddress;
       user.shopFor = updatedShopFor;
-      user.cart.items = product;
+      user.cart.items.push(product);
       return user.save();
     })
     .then((result) => {
