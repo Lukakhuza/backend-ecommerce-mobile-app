@@ -97,17 +97,6 @@ exports.getUserByEmail = (req, res, next) => {
     const userData = JSON.parse(result);
     res.status(200).json({ user: userData });
   });
-
-  // User.findOne({ email: req.body.email })
-  //   .then((user) => {
-  //     console.log("The user is here", user.firstName);
-  //     res.setHeader("Content-Type", "application/json");
-  //     res.send(user.firstName);
-  //     // console.log("Test Response 6", res);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
 };
 
 exports.updateUser = (req, res, next) => {

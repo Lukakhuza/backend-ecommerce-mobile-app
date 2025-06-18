@@ -109,18 +109,21 @@ exports.postCart = (req, res, next) => {
       user.phoneNumber = updatedPhoneNumber;
       user.address = updatedAddress;
       user.shopFor = updatedShopFor;
-      // Check if the product is already in the cart. If so, update quantity.
       let productIndexInCart = -1;
+
+      // Check if the product is already in the cart. If so, update quantity.
       for (i = 0; i < user.cart.items.length; i++) {
         if (product.id === user.cart.items[i].product.id) {
           productIndexInCart = i;
           console.log(productIndexInCart);
         }
       }
-      // If not, add the product to the cart
+
+      // If the product is not already in the cart, add it to the cart
       if (productIndexInCart === -1) {
         user.cart.items.push(updatedCartItem);
       } else {
+        // if it is already in the cart, update the quantity.
         user.cart.items[productIndexInCart].quantity +=
           updatedCartItem.quantity;
       }
