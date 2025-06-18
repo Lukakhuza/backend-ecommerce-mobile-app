@@ -121,8 +121,8 @@ exports.postCart = (req, res, next) => {
       if (productIndexInCart === -1) {
         user.cart.items.push(updatedCartItem);
       } else {
-        console.log("Test 1", updatedCartItem.quantity);
-        user.cart.items[productIndexInCart].quantity = 15;
+        user.cart.items[productIndexInCart].quantity +=
+          updatedCartItem.quantity;
       }
       return user.save();
     })
