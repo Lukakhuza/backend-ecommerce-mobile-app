@@ -122,7 +122,7 @@ exports.postCart = (req, res, next) => {
         user.cart.items.push(updatedCartItem);
       } else {
         console.log("Test 1", updatedCartItem.quantity);
-        user.cart.items[productIndexInCart].product.quantity = 15;
+        user.cart.items[productIndexInCart].quantity = 15;
       }
       return user.save();
     })
