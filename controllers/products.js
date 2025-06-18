@@ -118,7 +118,12 @@ exports.postCart = (req, res, next) => {
         }
       }
       // If not, add the product to the cart
-      user.cart.items.push(updatedCartItem);
+      if (productIndexInCart === -1) {
+        user.cart.items.push(updatedCartItem);
+      } else {
+        user.cart.items[productIndexInCart].product.quantity +=
+          updatedCartItem.quantity;
+      }
       return user.save();
     })
     .then((result) => {
