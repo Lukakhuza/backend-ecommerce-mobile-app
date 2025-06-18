@@ -94,6 +94,7 @@ exports.postCart = (req, res, next) => {
   const updatedEmail = user.email;
   const updatedPhoneNumber = user.phoneNumber;
   const updatedAddress = user.address;
+  console.log("Test 60", typeof product);
   const updatedCartItem = {
     product: product,
     quantity: 17,
