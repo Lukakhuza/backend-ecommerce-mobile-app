@@ -94,7 +94,10 @@ exports.postCart = (req, res, next) => {
   const updatedEmail = user.email;
   const updatedPhoneNumber = user.phoneNumber;
   const updatedAddress = user.address;
-  const updatedCart = product;
+  const updatedCartItem = {
+    product: product,
+    quantity: 17,
+  };
   const updatedShopFor = "Men";
   console.log("Test 55", updatedCart);
   User.findOne({ email: user.email })
@@ -105,7 +108,7 @@ exports.postCart = (req, res, next) => {
       user.phoneNumber = updatedPhoneNumber;
       user.address = updatedAddress;
       user.shopFor = updatedShopFor;
-      user.cart.items.push(product);
+      user.cart.items.push(updatedCartItem);
       return user.save();
     })
     .then((result) => {
