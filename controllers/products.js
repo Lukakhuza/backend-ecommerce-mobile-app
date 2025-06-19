@@ -102,6 +102,8 @@ exports.postCart = (req, res, next) => {
     quantity: req.body.productData.quantity,
   };
   const updatedShopFor = user.shopFor;
+
+  console.log("Test 15", user);
   User.findOne({ email: user.email })
     .then((user) => {
       user.firstName = updatedFirstName;
