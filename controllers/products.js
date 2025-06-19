@@ -85,6 +85,7 @@ exports.deleteProduct = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
   // const product = req.body.productData;
+  console.log("Test 5");
   const product = {
     id: req.body.productData.id,
     title: req.body.productData.title,
@@ -100,7 +101,7 @@ exports.postCart = (req, res, next) => {
     product: product,
     quantity: req.body.productData.quantity,
   };
-  const updatedShopFor = "Men";
+  const updatedShopFor = user.shopFor;
   User.findOne({ email: user.email })
     .then((user) => {
       user.firstName = updatedFirstName;
@@ -133,6 +134,7 @@ exports.postCart = (req, res, next) => {
       console.log("Updated User!");
     })
     .catch((err) => {
+      console.log("Test 9");
       console.log(err);
     });
 
