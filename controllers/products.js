@@ -133,11 +133,9 @@ exports.postCart = (req, res, next) => {
     })
     .then((result) => {
       console.log("Updated User!");
-      console.log(result);
-      // return result;
+      return result;
     })
     .catch((err) => {
-      console.log("Test 9");
       console.log(err);
     });
 
