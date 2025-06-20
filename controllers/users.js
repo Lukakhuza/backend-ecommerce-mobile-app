@@ -92,6 +92,7 @@ exports.getUserByEmail = (req, res, next) => {
       phoneNumber: user.phoneNumber,
       address: user.address,
       shopFor: user.shopFor,
+      cart: user.cart,
     });
 
     const userData = JSON.parse(result);
