@@ -85,7 +85,6 @@ exports.deleteProduct = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
   // const product = req.body.productData;
-  console.log("Test 5");
   const product = {
     id: req.body.productData.id,
     title: req.body.productData.title,
@@ -134,6 +133,8 @@ exports.postCart = (req, res, next) => {
     })
     .then((result) => {
       console.log("Updated User!");
+      console.log(result);
+      // return result;
     })
     .catch((err) => {
       console.log("Test 9");
