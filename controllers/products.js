@@ -138,9 +138,4 @@ exports.postCart = (req, res, next) => {
     .catch((err) => {
       console.log(err);
     });
-
-  // req.user.addProductToCart(product);
-  // const prodId = req.body.productId;
-  // Find product by id
-  // after finding the product, return req.user.addProductToCart(product)
 };
